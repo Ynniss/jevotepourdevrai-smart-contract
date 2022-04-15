@@ -51,7 +51,10 @@ contract("JM", () => {
 	  await JMContract.present(web3.utils.fromAscii("Yannis"));
 	  await JMContract.present(web3.utils.fromAscii("Lucas"));
 	  
-	  assert.equal(await JMContract.candidates.length, 1);
+	  const candidatesList  = await JMContract.getCandidates();
+	  
+	  assert.equal(candidatesList.length, 3);
+
   });
 
 });

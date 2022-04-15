@@ -25,6 +25,10 @@ contract JM {
 */
     }
 
+    function getCandidates() public view returns(Candidat[] memory) {
+      return candidates;
+    }
+
     function present(bytes32 _name) public {
       if (!isOpen) {
         Candidat memory newCandidate;
